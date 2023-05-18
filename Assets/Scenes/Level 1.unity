@@ -1144,6 +1144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompleteCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8690547780401108086, guid: b868bbfc9949c354d883d9c985a3bac3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b868bbfc9949c354d883d9c985a3bac3, type: 3}
 --- !u!1001 &4289787729937544168
@@ -1609,6 +1613,10 @@ PrefabInstance:
     - target: {fileID: 770718481162033379, guid: 7266ed45d4ba8854fa938929ca31f787, type: 3}
       propertyPath: m_Name
       value: LevelLostCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 770718481162033379, guid: 7266ed45d4ba8854fa938929ca31f787, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8226144991181224680, guid: 7266ed45d4ba8854fa938929ca31f787, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

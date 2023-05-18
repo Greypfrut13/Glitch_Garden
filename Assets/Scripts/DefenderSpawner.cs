@@ -5,6 +5,22 @@ using UnityEngine;
 public class DefenderSpawner : MonoBehaviour
 {
     private Defender _defender;
+    private GameObject _defenderParent;
+    private const string DEFENDER_PARENT_NAME = "Defenders";
+
+    private void Start() 
+    {
+        CreateDefenderParent();
+    }
+
+    private void CreateDefenderParent()
+    {
+        _defenderParent = GameObject.Find(DEFENDER_PARENT_NAME);
+        if(!_defenderParent)
+        {
+            _defenderParent = new GameObject(DEFENDER_PARENT_NAME);
+        }
+    }
 
     private void OnMouseDown() 
     {
@@ -50,5 +66,6 @@ public class DefenderSpawner : MonoBehaviour
         if(_defender == null) return;
 
         Defender newDefender = Instantiate(_defender, roundedPos, Quaternion.identity) as Defender;
+        newDefender.transform.parent = _defenderParent.transform;
     }
 }
