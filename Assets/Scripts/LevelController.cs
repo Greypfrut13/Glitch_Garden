@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class LevelController : MonoBehaviour
 
     private int _numberOfAttackers = 0;
     private bool _levelTimerFinished = false;
+    private int _currentScene;
+    private bool _lost = false;
 
     private void Start() 
     {
         _winLabel.SetActive(false);
         _loseLabel.SetActive(false);
+
+        _currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void AttackerSpawned()
@@ -25,7 +30,7 @@ public class LevelController : MonoBehaviour
     public void AttackerKilled()
     {
         _numberOfAttackers--;
-        if(_numberOfAttackers <= 0 && _levelTimerFinished)
+        if(_numberOfAttackers <= 0 && _levelTimerFinished && !_lost)
         {
             StartCoroutine(HandleWinCondition());
         }
@@ -35,11 +40,12 @@ public class LevelController : MonoBehaviour
     {
         _winLabel.SetActive(true);
         yield return new WaitForSeconds(_waitToLoad);
-        //добавить загрузку следующего уровня
+        SceneManager.LoadScene(_currentScene + 1);
     }
 
     public void HandleLoseCondition()
     {
+        _lost = true;
         _loseLabel.SetActive(true);
         Time.timeScale = 0;
     }

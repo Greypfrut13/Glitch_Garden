@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cac533f6214c764b9554603554c4674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSPeed: 0.7
+  _walkSPeed: 0.35
   _damage: 20
 --- !u!114 &1946865134952448672
 MonoBehaviour:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aea023451b3df64db951a1b613ddf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 300
   _deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
 --- !u!114 &1917890186
 MonoBehaviour:
